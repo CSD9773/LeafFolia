@@ -1,26 +1,19 @@
 #!/usr/bin/env bash
 
-# requires curl
+branch="ver/1.21.1"
 
-# Fetch the latest commit hash from Winds-Studio/Leaf and update gradle.properties
-commitHash=$(curl -s "https://api.github.com/repos/Winds-Studio/Leaf/commits" | \
+# Lấy commit hash mới nhất từ nhánh cụ thể
+commitHash=$(curl -s "https://api.github.com/repos/Winds-Studio/Leaf/commits?sha=$branch" | \
 grep -o '"sha": "[a-f0-9]\{40\}"' | \
 head -n 1 | \
 awk -F': ' '{print $2}' | \
 tr -d '"')
 
-# Kiểm tra xem có commit hash hay không
 if [ -n "$commitHash" ]; then
-    # Chuyển file gradle.properties về định dạng Unix (LF) nếu nó đang có định dạng Windows (CRLF)
-    dos2unix gradle.properties
-
-    # Cập nhật gradle.properties với commit hash mới nhất
-    sed -i "s/^Commit=.*/Commit=$commitHash/" gradle.properties
-
-    # Commit thay đổi
+    sed -i "s/^-Commit =.*/-Commit = $commitHash/" gradle.properties
     git add gradle.properties
-    git commit -m "Update gradle.properties with the latest commit from Winds-Studio/Leaf"
+    git commit -m "Update Leaf commit from branch $branch: $commitHash"
 else
-    echo "Failed to fetch the latest commit hash."
+    echo "❌ Failed to fetch latest commit from branch $branch"
     exit 1
 fi

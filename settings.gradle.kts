@@ -7,14 +7,9 @@ pluginManagement {
     }
 }
 
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.9.0"
-}
-
-rootProject.name = "leaffolia"
-
-for (name in listOf("leaffolia-api", "leaffolia-server")) {
-    val projName = name.lowercase(Locale.ENGLISH)
+rootProject.name = "LeafFolia"
+for (name in listOf("LeafFolia-API", "LeafFolia-Server")) {
+    val projName = name.lowercase()
     include(projName)
     findProject(":$projName")!!.projectDir = file(name)
 }

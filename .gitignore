@@ -1,23 +1,58 @@
-# Mac filesystem dust
+# JVM crash related
+core.*
+hs_err_pid*
+
+# Intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# netbeans
+nbproject/
+nbactions.xml
+
+# Gradle
+!gradle-wrapper.jar
+.gradle
+build/
+*/build/
+
+# we use maven!
+build.xml
+
+# Maven
+log/
+target/
+dependency-reduced-pom.xml
+
+# various other potential build files
+bin/
+dist/
+manifest.mf
+
+# Mac
 .DS_Store/
 .DS_Store
-
-# Linux temp files
-*~
 
 # vim
 .*.sw[a-p]
 
-# IntelliJ
-*.iml
-.idea
+# Linux temp files
+*~
 
-# Gradle
-!gradle/wrapper/gradle-wrapper.jar
-.gradle
-build
+# other stuff
+run/
 
-# Leaf
-build-data/dev-imports.txt
-patches/todo
-run
+build-data/
+LeafFolia-Server
+LeafFolia-API
+paper-api-generator
+*.jar
+/patches/todo/
