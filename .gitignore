@@ -21,11 +21,3 @@ build
 build-data/dev-imports.txt
 patches/todo
 run
-
-leaffolia-api/build.gradle.kts
-leaffolia-server/build.gradle.kts
-leaffolia-server/src/minecraft
-leaf-api
-leaf-server
-paper-api
-paper-server

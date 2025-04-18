@@ -60,23 +60,23 @@ paperweight {
 
         patchFile {
             path = "leaf-server/build.gradle.kts"
-            outputFile = file("leaffolia-server/build.gradle.kts")
-            patchFile = file("leaffolia-server/build.gradle.kts.patch")
+            outputFile = file("patch/leaffolia-server/build.gradle.kts")
+            patchFile = file("patch/leaffolia-server/build.gradle.kts.patch")
         }
         patchFile {
             path = "leaf-api/build.gradle.kts"
-            outputFile = file("leaffolia-api/build.gradle.kts")
-            patchFile = file("leaffolia-api/build.gradle.kts.patch")
+            outputFile = file("patch/leaffolia-api/build.gradle.kts")
+            patchFile = file("patch/leaffolia-api/build.gradle.kts.patch")
         }
         patchRepo("paperApi") {
             upstreamPath = "paper-api"
-            patchesDir = file("leaffolia-api/paper-patches")
+            patchesDir = file("patch/leaffolia-api/paper-patches")
             outputDir = file("paper-api")
         }
         patchDir("leafApi") {
             upstreamPath = "leaf-api"
             excludes = listOf("build.gradle.kts", "build.gradle.kts.patch", "paper-patches")
-            patchesDir = file("leaffolia-api/leaf-patches")
+            patchesDir = file("patch/leaffolia-api/leaf-patches")
             outputDir = file("leaf-api")
         }
     }
