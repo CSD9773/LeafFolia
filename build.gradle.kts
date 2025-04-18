@@ -74,13 +74,13 @@ paperweight {
     remapRepo.set("https://maven.fabricmc.net/")
     decompileRepo.set("https://maven.quiltmc.org/")
 
-    useStandardUpstream("luminol") {
-        url.set(github("LuminolMC", "Luminol"))
+    useStandardUpstream("leaf") {
+        url.set(github("Winds-Studio", "Leaf"))
         ref.set(providers.gradleProperty("Commit"))
 
         withStandardPatcher {
-            apiSourceDirPath.set("Luminol-API")
-            serverSourceDirPath.set("Luminol-Server")
+            apiSourceDirPath.set("Leaf-API")
+            serverSourceDirPath.set("Leaf-Server")
 
             apiPatchDir.set(layout.projectDirectory.dir("patches/api"))
             apiOutputDir.set(layout.projectDirectory.dir("LeafFolia-API"))
