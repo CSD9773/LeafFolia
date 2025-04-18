@@ -1,0 +1,31 @@
+# Mac filesystem dust
+.DS_Store/
+.DS_Store
+
+# Linux temp files
+*~
+
+# vim
+.*.sw[a-p]
+
+# IntelliJ
+*.iml
+.idea
+
+# Gradle
+!gradle/wrapper/gradle-wrapper.jar
+.gradle
+build
+
+# Leaf
+build-data/dev-imports.txt
+patches/todo
+run
+
+leaffolia-api/build.gradle.kts
+leaffolia-server/build.gradle.kts
+leaffolia-server/src/minecraft
+leaf-api
+leaf-server
+paper-api
+paper-server
