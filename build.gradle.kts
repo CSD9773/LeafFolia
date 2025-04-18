@@ -60,12 +60,12 @@ paperweight {
 
         patchFile {
             path = "leaf-server/build.gradle.kts"
-            outputFile = file("patch/leaffolia-server/build.gradle.kts")
+            outputFile = file("leaffolia-server/build.gradle.kts")
             patchFile = file("patch/leaffolia-server/build.gradle.kts.patch")
         }
         patchFile {
             path = "leaf-api/build.gradle.kts"
-            outputFile = file("patch/leaffolia-api/build.gradle.kts")
+            outputFile = file("leaffolia-api/build.gradle.kts")
             patchFile = file("patch/leaffolia-api/build.gradle.kts.patch")
         }
         patchRepo("paperApi") {
