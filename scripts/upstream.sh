@@ -15,7 +15,7 @@ if [ -n "$commitHash" ]; then
     dos2unix gradle.properties
 
     # Cập nhật gradle.properties với commit hash mới nhất
-    sed -i "s/^-Commit =.*/-Commit = $commitHash/" gradle.properties
+    sed -i "s/^Commit =.*/Commit = $commitHash/" gradle.properties
 
     # Commit thay đổi
     git add gradle.properties
