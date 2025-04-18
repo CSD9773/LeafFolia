@@ -8,7 +8,7 @@ grep -o '"sha": "[a-f0-9]\{40\}"' | \
 head -n 1 | \
 awk -F': ' '{print $2}' | \
 tr -d '"' | \
-xargs -I {} sed -i "s/^-Commit =.*/-Commit = {}/" gradle.properties
+xargs -I {} sed -i "s/^Commit =.*/Commit = {}/" gradle.properties
 
 # Commit the change
 git add gradle.properties
